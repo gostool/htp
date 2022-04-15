@@ -2,10 +2,49 @@ server:
   address:     ":8000"
   openapiPath: "/api.json"
   swaggerPath: "/swagger"
+#  serverRoot: "resource/public"
+  ServerRoot: "resource/public"
+  IndexFiles: ["index.html"]
 
 logger:
   level : "all"
   stdout: true
+  path: "/tmp/log/app"
+  debug:
+    path: "/tmp/log/gcar/debug"
+    level: "dev"
+    stdout: true
 
+# Database.
+database:
+  default:
+    link: "mysql:root:mysecretpassword@tcp(192.168.3.8:3306)/gcar"
+    debug: true
+  logger:
+    path: "/tmp/log/gcar/sql"
+    level: "all"
+    stdout: true
 
+redis:
+  default: "192.168.3.8:6379,0"
+  cache: "192.168.3.8:6379,1?idleTimeout=600"
 
+# gfcli
+#gfcli
+#  [[gfcli.gen.dao]]
+#  link  = "mysql:root:mysecretpassword@tcp(192.168.3.8:3306)/mapkits"
+#  tables = "user,bdg_info,bd_info,fl_info,bdg_config"
+#  [[gfcli.gen.model]]
+#  link  = "mysql:root:mysecretpassword@tcp(192.168.3.8:3306)/mapkits"
+#  tables = "user,bdg_info,bd_info,fl_info,bdg_config"
+#  [gfcli.build]
+#  name     = "main"
+#  #arch     = "all"
+#  arch     = "amd64"
+#  system   = "linux"
+#  mod      = "none"
+#  cgo      = 0
+#  pack     = ""
+#  version  = "0.0.1.1"
+#  output   = "./bin"
+#  extra    = ""%
