@@ -1,0 +1,36 @@
+.buildpath
+.hgignore.swp
+.project
+.orig
+.swp
+.idea/
+.settings/
+.vscode/
+vender/
+cmd/cmd
+cmd/config
+log/
+composer.lock
+gitpush.sh
+pkg/
+bin/
+cmd/bin
+cbuild
+*/.DS_Store
+gw
+main
+gf-empty
+.vscode
+#go.sum
+config/config.toml
+config/config_dev.toml
+config/*prod.yaml
+config/*prod.yml
+mapkits
+# ansible
+inventories
+#  ln -s ~/gitlab/ansible/inventories/staging_local/group_vars/mapkits.yml mapkits.yml
+mapkits.yml
+mapkits_prod.yml
+
+**/role_mapkits
