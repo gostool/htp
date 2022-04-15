@@ -17,10 +17,10 @@ var (
 		Func: func(ctx context.Context, parser *gcmd.Parser) (err error) {
 			s := g.Server()
 			s.Group("/", func(group *ghttp.RouterGroup) {
-				group.Middleware(ghttp.MiddlewareHandlerResponse)
 				group.Middleware(
-					//service.Middleware().Ctx,
 					ghttp.MiddlewareCORS,
+					ghttp.MiddlewareHandlerResponse,
+					//service.Middleware().Ctx,
 				)
 				// R
 				group.Bind(
